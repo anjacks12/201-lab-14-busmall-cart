@@ -7,12 +7,16 @@ const Cart = function(items) {
 };
 
 Cart.prototype.addItem = function(product, quantity) {
-  // TODO: Fill in this instance method to create a new CartItem and add it to this.items
+  // DONE: Fill in this instance method to create a new CartItem and add it to this.items
   console.log(product, quantity);
+  let newItem = new CartItem(product, quantity);
+  this.items.push(newItem);
 };
 
 Cart.prototype.saveToLocalStorage = function() {
-  // TODO: Fill in this instance method to save the contents of the cart to localStorage
+  // DONE: Fill in this instance method to save the contents of the cart to localStorage
+  let pickedItem = JSON.stringify(this.items);
+  localStorage.setItem('cartItem', pickedItem );
 };
 
 Cart.prototype.removeItem = function(item) {
