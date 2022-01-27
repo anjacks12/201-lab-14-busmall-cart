@@ -26,7 +26,7 @@ function clearCart() {
   
 }
 
-// TODO: Fill in the <tr>'s under the <tbody> for each item in the cart
+// TODO: Fill in the 's under the  for each item in the cart
 function showCart() {
 
   // TODO: Find the table body
@@ -34,10 +34,14 @@ function showCart() {
     // console.log(cart);
     let tr = document.createElement('tr');
     tBody.appendChild(tr);
+     
+    let el = document.createElement("input");
+    el.type="checkbox";
+    el.id="box";
+    tr.appendChild(el);
     
     let td = document.createElement('td');
-    
-    td.textContent = `Remove ${cart.items[i].quantity} ${cart.items[i].product}`;
+    td.textContent = `${cart.items[i].quantity} ${cart.items[i].product}`;
     tr.appendChild(td);
     console.log(cart);
   }
@@ -49,7 +53,7 @@ function showCart() {
 }
 
 function removeItemFromCart(event) {
-
+  
   // TODO: When a delete link is clicked, use cart.removeItem to remove the correct item
   // TODO: Save the cart back to local storage
   // TODO: Re-draw the cart table
